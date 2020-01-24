@@ -23,7 +23,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Ui Console Demo'
+      title: 'Ui Console Demo',
+      template: 'public/index.html',
+      inject: true,
     })
   ],
   resolve: {
