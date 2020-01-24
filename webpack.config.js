@@ -1,13 +1,16 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
 const phase = process.env.NODE_ENV;
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src', 'index'),
+  entry: {
+    'ui-console': path.resolve(__dirname, 'src', 'index')
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
@@ -28,6 +31,9 @@ module.exports = {
       inject: true,
     })
   ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
