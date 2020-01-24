@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "$(npm bin)/webpack-dev-server --open",
+    "start": "NODE_ENV=development $(npm bin)/webpack-dev-server --open",
     "build": "webpack"
   },
   "repository": {
