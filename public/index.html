@@ -5,5 +5,13 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <script>
+      const myFunc = () => {
+        setTimeout(() => {
+          console.log('setTimeout');
+        }, 3000);
+      }
+      myFunc();
+    </script>
   </body>
 </html>
