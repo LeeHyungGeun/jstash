@@ -1,5 +1,5 @@
 {
-  "name": "log-stack",
+  "name": "jstash",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LeeHyungGeun/log-stack.git"
+    "url": "git+https://github.com/LeeHyungGeun/jstash.git"
   },
   "keywords": [],
   "author": "LeeHyungGeun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LeeHyungGeun/log-stack/issues"
+    "url": "https://github.com/LeeHyungGeun/jstash/issues"
   },
-  "homepage": "https://github.com/LeeHyungGeun/log-stack#readme",
+  "homepage": "https://github.com/LeeHyungGeun/jstash#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",

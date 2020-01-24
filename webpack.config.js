@@ -8,7 +8,7 @@ const phase = process.env.NODE_ENV;
 module.exports = {
   mode: 'development',
   entry: {
-    'log-stack': path.resolve(__dirname, 'src', 'index')
+    'jstash': path.resolve(__dirname, 'src', 'index')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

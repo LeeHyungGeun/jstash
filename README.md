@@ -1,2 +1,2 @@
-# log-stack
-Log your JS stack by console.log on UI.
+# jstash
+Stash your JS Log and Stack, and check on UI directly.
