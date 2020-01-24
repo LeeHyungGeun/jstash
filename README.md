@@ -1,2 +1,2 @@
-# ui-console
-Log your console.log with stack trace on UI. It will help you debug on Web App.
+# log-stack
+Log your JS stack by console.log on UI.

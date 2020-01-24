@@ -1,5 +1,5 @@
 {
-  "name": "ui-console",
+  "name": "log-stack",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LeeHyungGeun/ui-console.git"
+    "url": "git+https://github.com/LeeHyungGeun/log-stack.git"
   },
   "keywords": [],
-  "author": "LeeHyungGeun <lhg4031@gmail.com>",
+  "author": "LeeHyungGeun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LeeHyungGeun/ui-console/issues"
+    "url": "https://github.com/LeeHyungGeun/log-stack/issues"
   },
-  "homepage": "https://github.com/LeeHyungGeun/ui-console#readme",
+  "homepage": "https://github.com/LeeHyungGeun/log-stack#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
