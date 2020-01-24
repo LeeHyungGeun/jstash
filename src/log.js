@@ -5,6 +5,11 @@ class Log {
     this.monkeyPatching();
   }
 
+  // Reference: https://kjwsx23.tistory.com/285
+  getStackTrace () {
+    let stack = new Error().stack || ''; stack = stack.split('\n').map(function (line) { return line.trim(); }); return stack.splice(stack[0] == 'Error' ? 2 : 1);
+  }
+
   monkeyPatching() {
     const that = this;
     const methods = ['log', 'info', 'warn', 'debug', 'error'];
@@ -22,9 +27,10 @@ class Log {
 
     methods.map((method) => {
       window.console[method] = (...args) => {
-        this.state.set({
+        that.state.set({
           logType: method,
-          logs: args
+          logs: args,
+          trace: that.getStackTrace()
         });
         that.console[method](...args);
       };
