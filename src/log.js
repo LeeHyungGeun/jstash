@@ -22,7 +22,7 @@ class Log {
 
     methods.map((method) => {
       window.console[method] = (...args) => {
-        this.state.queue.push({
+        this.state.set({
           logType: method,
           logs: args
         });
