@@ -1,6 +1,7 @@
 class State {
   constructor() {
     this.queue = [];
+    this.enableTrace = true;
   }
 
   set(item) {
