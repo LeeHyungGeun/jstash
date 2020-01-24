@@ -3,15 +3,45 @@
   <head>
     <meta charset="utf-8"/>
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      pre {
+        font-size: 32px;
+        line-height: 32px;
+        border: 2px solid black;
+        padding: 30px;
+      }
+    </style>
   </head>
   <body>
+    <div>
+      <pre onclick="log()">
+        console.log('console.log');
+      </pre>
+      <pre onclick="warn()">
+        console.warn('console.warn');
+      </pre>
+      <pre onclick="error()">
+        console.error('console.error');
+      </pre>
+      <pre onclick="setTimeoutLog()">
+        setTimeout
+      </pre>
+    </div>
     <script>
-      const myFunc = () => {
+      const log = () => {
+        console.log('console.log');
+      }
+      const warn = () => {
+        console.warn('console.warn');
+      }
+      const error = () => {
+        console.error('console.error');
+      }
+      const setTimeoutLog = () => {
         setTimeout(() => {
           console.log('setTimeout');
-        }, 3000);
+        }, 0);
       }
-      myFunc();
     </script>
   </body>
 </html>
