@@ -21,34 +21,37 @@ class View {
         font-size: 14px;
         position: fixed;
         width: 100%;
-        height: 20%;
+        height: 30%;
         bottom: 0;
         left: 0;
         right: 0;
         z-index: 999999999;
-        color: #727579;
         background: #242424;
       }
-
       .ui-console {
         font-size: 2em;
         height: 100%;
         width: 100%;
         overflow-y: scroll;
       }
-
       .ui-console-log {
         padding: 0.2em 0.5em;
       }
-
-      .ui-console-log.info {
-
+      .ui-console-log.log {
+        color: #727579;
+        background: #242424;
       }
-
+      .ui-console-log.info {
+        color: #727579;
+        background: #242424;
+      }
       .ui-console-log.warn {
-        width: 100%;
-        color: #74663C;
-        background: #322B08;
+        color: #eae244;
+        background: #51481c;
+      }
+      .ui-console-log.error {
+        color: #d65c59;
+        background: #270201
       }
     `
     this.$root.classList.add('ui-console');
@@ -60,8 +63,12 @@ class View {
     if (queue.length) {
       queue.map((item) => {
         const $div = document.createElement('div');
+        // const $trace = document.createElement('div');
+        // $trace.innerHTML = item.trace;
         $div.innerHTML = item.logs.join(' ') || '';
         $div.classList.add('ui-console-log', item.logType);
+        // $div.appendChild($trace);
+
         this.$root.appendChild($div);
       });
       this.$root.scrollTop = this.$root.scrollHeight - this.$root.clientHeight;
