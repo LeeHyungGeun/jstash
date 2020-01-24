@@ -8,10 +8,8 @@ class View {
   _constructor() {
     this.$wrap = document.createElement('div');
     this.$root = document.createElement('div');
-    this.$style = document.createElement('style');
     this.$wrap.appendChild(this.$root);
     document.body.appendChild(this.$wrap);
-    document.head.appendChild(this.$style);
 
     this.setStyle();
   }
