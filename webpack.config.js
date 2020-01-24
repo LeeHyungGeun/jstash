@@ -12,6 +12,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -22,7 +30,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src')
     },
-    extensions: ['.js', '.json']
+    extensions: ['.js', '.json', '.css']
   },
   devServer: {
     host: '0.0.0.0',
