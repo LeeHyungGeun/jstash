@@ -39,7 +39,6 @@ class View {
   }
 
   render() {
-
     setInterval(() => {
       this.update();
     }, 60);
