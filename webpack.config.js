@@ -14,7 +14,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'Ui Console Demo'
+    })
   ],
   resolve: {
     alias: {
