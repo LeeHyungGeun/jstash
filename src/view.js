@@ -15,7 +15,7 @@ class View {
     const queue = this.state.flush();
     queue.map((item) => {
       const $div = document.createElement('div');
-      $div.innerHTML = item.message || '';
+      $div.innerHTML = item.logs.join(' ') || '';
       this.$wrap.appendChild($div);
     });
   }
