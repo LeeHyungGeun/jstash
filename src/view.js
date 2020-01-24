@@ -10,7 +10,6 @@ class View {
     this.$root = document.createElement('div');
     this.$wrap.appendChild(this.$root);
     document.body.appendChild(this.$wrap);
-
     this.setStyle();
   }
 
@@ -24,15 +23,39 @@ class View {
     if (queue.length) {
       queue.map((item) => {
         const $div = document.createElement('div');
-        // const $trace = document.createElement('div');
-        // $trace.innerHTML = item.trace;
-        $div.innerHTML = item.logs.join(' ') || '';
+        const $contentWrap = document.createElement('div');
+        const $log = document.createElement('span');
+        const $button = document.createElement('span');
+        const $traceContent = document.createElement('div');
+        $log.innerHTML = item.logs.join(' ') || '';
+        $button.innerHTML = 'trace';
+        $button.onclick = (e) => this.toggleTrace($traceContent, item);
+        $contentWrap.appendChild($log);
+        $contentWrap.appendChild($button);
+        $div.appendChild($contentWrap);
+        $div.appendChild($traceContent);
+        $contentWrap.classList.add('ui-console-log-wrap');
+        $traceContent.classList.add('ui-console-trace--content');
+        $button.classList.add('ui-console-log--button');
+        $log.classList.add('ui-console-log--content');
         $div.classList.add('ui-console-log', item.logType);
-        // $div.appendChild($trace);
-
         this.$root.appendChild($div);
       });
       this.$root.scrollTop = this.$root.scrollHeight - this.$root.clientHeight;
+    }
+  }
+
+  toggleTrace($e, item) {
+    if ($e.innerHTML) {
+      $e.innerHTML = '';
+      return;
+    } else {
+      const $div = document.createElement('div');
+      $e.innerHTML = '';
+      item.trace.forEach(i => {
+        $div.innerHTML += `<div>${i}</div>`;
+      });
+      $e.appendChild($div);
     }
   }
 

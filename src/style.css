@@ -6,7 +6,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 999999999;
+  z-index: 999999998;
   background: #242424;
 }
 .ui-console {
@@ -17,6 +17,19 @@
 }
 .ui-console-log {
   padding: 0.2em 0.5em;
+}
+.ui-console-log-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.ui-console-log--button {
+  width: 5em;
+  height: 1.2em;
+  font-size: 1em;
+  color: white;
+  text-align: right;
+  cursor: pointer;
+  user-select: none;
 }
 .ui-console-log.log {
   color: #727579;
@@ -33,4 +46,8 @@
 .ui-console-log.error {
   color: #d65c59;
   background: #270201
+}
+.ui-console-trace--content {
+  font-size: 1em;
+  color: red;
 }
