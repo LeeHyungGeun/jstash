@@ -22,7 +22,7 @@ class View {
   }
 
   update() {
-    const queue = this.state.flush();
+    const queue = this.state.get();
     if (queue.length) {
       queue.map((item) => {
         const $div = document.createElement('div');

@@ -5,11 +5,23 @@ class State {
   }
 
   set(item) {
-    this.queue.push(item);
+    if (item) {
+      this.queue.push({
+        ...item,
+        read: false
+      });
+    }
   }
 
   get() {
-    return this.queue.map(i => i);
+    const unreadQueue = this.queue.filter((i) => i && !i.read);
+    this.queue = this.queue.map((i) => {
+      return {
+        ...i,
+        read: true
+      }
+    });
+    return unreadQueue;
   }
   
   flush() {
