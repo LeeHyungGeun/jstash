@@ -1,8 +1,11 @@
+import StackTrace from './stacktrace';
+
 class Log {
   constructor(state) {
     this.state = state;
     this.console = {};
     this.monkeyPatching();
+    this.stackTrace = new StackTrace();
   }
 
   // Reference: https://kjwsx23.tistory.com/285
@@ -13,6 +16,7 @@ class Log {
   monkeyPatching() {
     const that = this;
     const methods = ['log', 'info', 'warn', 'debug', 'error'];
+    const $window = window;
 
     if (!window.console) {
       window.console = {}
@@ -26,11 +30,12 @@ class Log {
     }
 
     methods.map((method) => {
-      window.console[method] = (...args) => {
+      window.console[method] = async (...args) => {
         that.state.set({
           logType: method,
           logs: args,
-          trace: that.getStackTrace()
+          // trace: that.getStackTrace()
+          trace: await that.stackTrace.get()
         });
         that.console[method](...args);
       };
