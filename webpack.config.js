@@ -37,7 +37,7 @@ module.exports = {
     extensions: ['.js', '.json', '.css']
   },
   devServer: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 3000,
     hot: true,
     historyApiFallback: true
