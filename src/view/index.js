@@ -1,5 +1,5 @@
 import './style.css';
-import { isObject, stringify } from './utils';
+import { isObject, stringify } from '../utils';
 class View {
   constructor(state) {
     this.state = state;
@@ -47,17 +47,9 @@ class View {
   }
 
   toggleTrace($e, item) {
-    if ($e.innerHTML) {
-      $e.innerHTML = '';
-      return;
-    } else {
-      const $div = document.createElement('div');
-      $e.innerHTML = '';
-      item.trace.forEach(i => {
-        $div.innerHTML += `<div>${i}</div>`;
-      });
-      $e.appendChild($div);
-    }
+    const tpl = require('./trace.hbs');
+    const r = data => tpl(data);
+    $e.innerHTML = $e.innerHTML ? '' : require('./trace.hbs')(item);
   }
 
   render() {
