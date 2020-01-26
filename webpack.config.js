@@ -27,8 +27,8 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.s(ca)ss$/i,
-        use: ['sass-loader']
+        test: /\.scss/i,
+        use: ['to-string-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.hbs$/i,
@@ -58,7 +58,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src')
     },
-    extensions: ['.js', '.json', '.css']
+    extensions: ['.js', '.json', '.css', '.scss']
   },
   devServer: {
     host: 'localhost',
