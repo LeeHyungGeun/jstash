@@ -35,6 +35,7 @@ class Log {
           logType: method,
           logs: args,
           // trace: that.getStackTrace()
+          timestamp: Date.now(),
           trace: await that.stackTrace.get()
         });
         that.console[method](...args);
