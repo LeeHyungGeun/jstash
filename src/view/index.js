@@ -49,7 +49,7 @@ class View {
   toggleTrace($e, item) {
     const tpl = require('./trace.hbs');
     const r = data => tpl(data);
-    $e.innerHTML = $e.innerHTML ? '' : require('./trace.hbs')(item);
+    $e.innerHTML = $e.innerHTML ? '' : r(item);
   }
 
   render() {
