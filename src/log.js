@@ -4,8 +4,8 @@ class Log {
   constructor(state) {
     this.state = state;
     this.console = {};
-    this.monkeyPatching();
     this.stackTrace = new StackTrace();
+    this.monkeyPatching();
   }
 
   // Reference: https://kjwsx23.tistory.com/285
