@@ -6,3 +6,4 @@ export const stringify = (obj) => {
   }
   return JSON.stringify(rObj);
 };
+export const toStr = (str) => str == null ? '' : str.toString();
