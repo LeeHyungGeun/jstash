@@ -28,6 +28,8 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "eruda": "^2.0.2",
+    "eruda-code": "^2.0.0",
     "stacktrace-js": "^2.0.2"
   }
 }
