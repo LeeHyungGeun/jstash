@@ -27,6 +27,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.s(ca)ss$/i,
+        use: ['sass-loader']
+      },
+      {
         test: /\.hbs$/i,
         use: [
           {
