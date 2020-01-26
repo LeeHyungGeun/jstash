@@ -5,13 +5,19 @@ const path = require('path');
 
 const phase = process.env.NODE_ENV;
 
+const PATH = {
+  src: path.resolve(__dirname, 'src'),
+  node_modules: path.resolve(__dirname, 'node_modules'),
+  dist: path.resolve(__dirname, 'dist')
+}
+
 module.exports = {
   mode: 'development',
   entry: {
-    'jstash': path.resolve(__dirname, 'src', 'index')
+    'jstash': PATH.src
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: PATH.dist,
     filename: '[name].js'
   },
   module: {
@@ -20,6 +26,20 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.hbs$/i,
+        use: [
+          {
+            loader: 'handlebars-loader'
+          },
+          {
+            loader: 'html-minifier-loader',
+            options: {
+              ignoreCustomFragments: [/\{\{\{[^}]+\}\}\}/, /\{\{[^}]+\}\}/]
+            }
+          }
+        ]
+      }
     ]
   },
   plugins: [
