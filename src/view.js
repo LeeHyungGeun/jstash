@@ -1,4 +1,5 @@
 import './style.css';
+import { isObject, stringify } from './utils';
 class View {
   constructor(state) {
     this.state = state;
@@ -27,7 +28,7 @@ class View {
         const $log = document.createElement('span');
         const $button = document.createElement('span');
         const $traceContent = document.createElement('div');
-        $log.innerHTML = item.logs.join(' ') || '';
+        $log.innerHTML = item.logs.map(l => isObject(l) ? stringify(l) : l).join(' ') || '';
         $button.innerHTML = 'trace';
         $button.onclick = (e) => this.toggleTrace($traceContent, item);
         $contentWrap.appendChild($log);
